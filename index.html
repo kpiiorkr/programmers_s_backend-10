@@ -17,28 +17,36 @@
 .fullpage-topbar-wrapper,[data-edu-component="floating-banner"],.sticky-navigation-main{display:none!important}
 body{padding-top:124px}
 #kp-head{position:fixed;top:0;left:0;right:0;z-index:9999;background:#19191d;color:#fff;font-family:Pretendard,-apple-system,sans-serif}
-#kp-head .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 28px;max-width:100%}
+#kp-head .kp-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;padding:0 28px;box-sizing:border-box;width:100%}
 #kp-head .r1{height:67px;border-bottom:1px solid #2c2c33}
 #kp-head .r2{height:57px}
-#kp-head h1{margin:0;font-size:20px;font-weight:700;color:#fff;letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#kp-head .cd{font-size:15px;color:#b5b5be}
+#kp-head h1{margin:0;font-size:20px;font-weight:700;color:#fff;letter-spacing:-.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#kp-head .cd{font-size:15px;color:#b5b5be;white-space:nowrap}
 #kp-head .cd b{font-size:22px;font-weight:800;color:#ff6b35;margin-left:12px}
 #kp-head .cd i{font-style:normal;font-size:18px;font-weight:800;color:#fff;margin-right:2px}
-#kp-head a.ap{flex:none;display:inline-block;background:#ff6b35;color:#fff!important;font-weight:700;font-size:15px;padding:10px 20px;border-radius:6px;text-decoration:none}
+#kp-head a.ap{flex:none;display:inline-block;background:#ff6b35;color:#fff!important;font-weight:700;font-size:15px;padding:10px 20px;border-radius:6px;text-decoration:none;text-align:center;box-sizing:border-box}
 #kp-head a.ap:hover{background:#ff5a1f}
-@media(max-width:600px){body{padding-top:112px}#kp-head .row{padding:0 14px}#kp-head .r1{height:60px}#kp-head .r2{height:52px}#kp-head h1{font-size:15px}#kp-head .cd{font-size:12px}#kp-head .cd b{font-size:16px;margin-left:6px}#kp-head .cd i{font-size:13px}#kp-head a.ap{font-size:13px;padding:8px 12px}}
+@media(max-width:768px){
+#kp-head .kp-row{flex-direction:column;justify-content:center;align-items:stretch;gap:10px;padding:12px 16px;height:auto}
+#kp-head .r1{height:auto}#kp-head .r2{height:auto;align-items:center}
+#kp-head h1{font-size:16px}
+#kp-head .r1 a.ap{width:100%;padding:12px;font-size:16px;border-radius:8px}
+#kp-head .cd{font-size:13px;text-align:center}#kp-head .cd b{font-size:18px;margin-left:8px}#kp-head .cd i{font-size:15px}
+#kp-head .r2 a.ap{padding:10px 36px;font-size:15px;border-radius:8px}
+}
 </style>
 </head>
 <body class="learn-courses learn-courses-show" data-ns="Learn" data-controller="courses" data-action="show" data-locale="ko">
 <div id="kp-head">
-<div class="row r1"><h1>[10기] K-Digital Training: (심화) Spring AI와 MSA를 활용한 백엔드 개발</h1><a class="ap" href="https://forms.gle/7PmHrgJwUD2zThsQA" target="_blank" rel="noopener">수업 신청</a></div>
-<div class="row r2"><div class="cd">모집 종료까지<b id="kp-cd"></b></div><a class="ap" href="https://forms.gle/7PmHrgJwUD2zThsQA" target="_blank" rel="noopener">수업 신청</a></div>
+<div class="kp-row r1"><h1>[10기] K-Digital Training: (심화) Spring AI와 MSA를 활용한 백엔드 개발</h1><a class="ap" href="https://forms.gle/7PmHrgJwUD2zThsQA" target="_blank" rel="noopener">수업 신청</a></div>
+<div class="kp-row r2"><div class="cd">모집 종료까지<b id="kp-cd"></b></div><a class="ap" href="https://forms.gle/7PmHrgJwUD2zThsQA" target="_blank" rel="noopener">수업 신청</a></div>
 </div>
 <script>
 (function(){var end=new Date('2026-12-17T23:59:00+09:00').getTime(),el=document.getElementById('kp-cd');
 function p(n){return String(n).padStart(2,'0')}
 function t(){var d=Math.max(0,end-Date.now())/1000|0;var D=d/86400|0,H=d%86400/3600|0,M=d%3600/60|0,S=d%60;
-el.innerHTML=p(D)+'<i>일</i>'+p(H)+'<i>시간</i>'+p(M)+'<i>분</i>'+p(S)+'<i>초</i>';}t();setInterval(t,1000);})();
+el.innerHTML=p(D)+'<i>일</i>'+p(H)+'<i>시간</i>'+p(M)+'<i>분</i>'+p(S)+'<i>초</i>';}t();setInterval(t,1000);
+function pad(){document.body.style.paddingTop=document.getElementById('kp-head').offsetHeight+'px'}pad();addEventListener('resize',pad);addEventListener('load',pad);})();
 </script>
 <div class="learn-courses learn-courses-show" data-ns="Learn" data-controller="courses" data-action="show"><div class="main">
 <div class="fullpage-topbar-wrapper kdt-common-form-top-banner">
